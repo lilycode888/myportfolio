@@ -8,13 +8,13 @@
 
 body {
     background-image: url(./images/bg.jpg);
-    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     overflow: hidden;
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -463,6 +463,7 @@ body {
 
     .container {
         width: 70%;
+        min-width: 300px;
     }
 
     .banner {
@@ -472,8 +473,8 @@ body {
     .nav-container {
         width: 100px;
         position: fixed;
-        right: -100px;
-        top: 0;
+        right: 0;
+        top: -50px;
         backdrop-filter: blur(12px);
         background-color: rgba(255, 255, 255, 0.4);
         border-top-right-radius: 5px;
@@ -485,7 +486,7 @@ body {
     }
 
     .about {
-        width: 400px;
+        width: 90%;
         height: 500px;
         position: static;
         display: flex;
@@ -497,6 +498,7 @@ body {
 
     .about .about-text {
         width: 100%;
+        padding: atuo 20px;
         position: static;
         display: flex;
         flex-direction: column;
@@ -505,16 +507,18 @@ body {
 
     .about .about-text h1 {
         text-align: left;
-        width: 100%;
+        width: 80%;
     }
 
     .about .about-text p {
-        width: 100%;
+        width: 80%;
+        padding: 5px;
     }
 
     .about .about-skills {
         position: static;
         width: 100%;
+        margin: 10px;
     }
 
 
@@ -575,7 +579,7 @@ body {
     }
 
     .contact p {
-        width: 300px;
+        width: 100%;
         word-wrap: break-word;
         font-size: 1.3rem;
     }
@@ -584,6 +588,87 @@ body {
     .item-container i {
         font-size: 1.5rem;
         margin-right: 10px;
+    }
+
+}
+
+@media screen and (max-width:450px) {
+    .container {
+        /* border: 1px solid red; */
+        width: 90%;
+        min-width: 0px;
+    }
+
+
+    .nav-container,
+    .container.show-content .nav-container {
+        width: 100%;
+        height: 50px;
+        z-index: 20;
+    }
+
+    .nav-container .sandwich {
+        opacity: 1;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+    }
+
+    .sandwich i {
+        font-size: 2rem;
+        transition: all 0.2s;
+    }
+
+    .nav-container .nav {
+        opacity: 0;
+        width: 0;
+        transition: all 0.2s;
+    }
+
+    .container .nav-container:hover,
+    .container.show-content .nav-container:hover {
+        width: 100%;
+        height: 200px;
+        position: inline;
+        transform: translateY(-50px);
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+
+    .nav-container ul {
+        height: 180%;
+    }
+
+
+    .nav ul li a:hover,
+    .nav ul li a:active {
+        color: rgb(0, 86, 33);
+        font-weight: bold;
+        letter-spacing: 0.15rem;
+    }
+
+    .nav ul li:hover {
+        background-color: green;
+        width: 100%;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .nav ul li:hover a {
+        color: #fff;
+    }
+
+
+    .about .about-skills {
+        height: 800px;
+    }
+
+    .contact p {
+        width: 100%;
     }
 
 }
